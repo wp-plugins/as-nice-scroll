@@ -1,4 +1,5 @@
 === As Nice Scroll ===
+Contributors: anuislam
 Tags: as nice scroll, nicescroll, wordpress plugin
 Requires at least: 3.5
 Tested up to: 4.0
@@ -26,6 +27,8 @@ All credit goes to nicescroll
 
 == Screenshots ==
 
+1. installed in test server option demo
+2. installed in test server plugin demo
 
 == Changelog ==
 
