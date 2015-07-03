@@ -7,7 +7,7 @@
 
 /*
 Plugin Name: AS nice scroll
-Plugin URI: http://wordpress.org/plugins/as-nicescroll/
+Plugin URI: https://wordpress.org/plugins/as-nice-scroll/
 Description: This is simple wordpress plugin.
 Author: Anu Islam
 Version: 1.0

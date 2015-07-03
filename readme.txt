@@ -6,8 +6,6 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
-
 == Description ==
 
 As nice scroll is a jquery plugin for WordPress site. This plugin will create a nice scrollbar for your site.
