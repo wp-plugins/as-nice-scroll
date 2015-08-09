@@ -32,5 +32,12 @@ All credit goes to nicescroll
 
 == Changelog ==
 
+= 1.2 =
+*Release Date - 9th August, 2015*
+*Include some html, css.
+
 = 1.0 =
-* Initial Release 
+* Initial Release
+
+== Upgrade Notice ==
+Upgrade to Version 1.2

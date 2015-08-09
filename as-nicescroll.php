@@ -1,7 +1,7 @@
 <?php
 /**
  * @package as-nicescroll
- * @version 1.0
+ * @version 1.2
  * @licence GPLv2
  */
 
@@ -10,7 +10,7 @@ Plugin Name: AS nice scroll
 Plugin URI: https://wordpress.org/plugins/as-nice-scroll/
 Description: This is simple wordpress plugin.
 Author: Anu Islam
-Version: 1.0
+Version: 1.2
 Author URI: http://asfoundation.tk/
 */
 
@@ -35,14 +35,14 @@ Author URI: http://asfoundation.tk/
  *
  * @package as-nicescroll
  */
- 
- function as_ncescroll_script(){	 
+
+ function as_ncescroll_script(){
 	 wp_register_script( 'nicescroll', plugins_url( 'js/nicescroll.js', __FILE__ ), 'jquery', 1.0, true );
 	 wp_enqueue_script('jquery');
-	 wp_enqueue_script('nicescroll');	 
+	 wp_enqueue_script('nicescroll');
  }
- add_action('wp_enqueue_scripts','as_ncescroll_script'); 
- 
+ add_action('wp_enqueue_scripts','as_ncescroll_script');
+
 //admin picker
 function as_admin_color_picker_option(){
 if( is_admin() ) {
@@ -51,6 +51,7 @@ if( is_admin() ) {
 	wp_enqueue_script('as_admin_custom');
 	wp_enqueue_script('wp-color-picker');
 }
+wp_enqueue_style( 'as_admin_css', plugins_url( 'css/as-admin-css.css', __FILE__ ) );
 }
 add_action('admin_enqueue_scripts','as_admin_color_picker_option');
 //nice scrol avtive
@@ -73,12 +74,12 @@ function as_ncescroll_js_active() {
 	$smoothscroll = $as_option['as_nice_smoothscroll'];
 	$iframeautoresize = $as_option['as_nice_iframeautoresize'];
 	$touchbehavior = $as_option['as_nice_touchbehavior'];
-	
+
 	?>
 <script type="text/javascript">
 (function($){
 	$(document).ready(
-	function() { 
+	function() {
 		$("html").niceScroll({
 			cursorcolor:		"<?php echo (!empty($cursorcolor)) ? $cursorcolor : '#ff0000'; ?>",
 			cursorwidth: 		"<?php echo (!empty($cursorwidth)) ? $cursorwidth : '5'; ?>px",
@@ -97,7 +98,7 @@ function as_ncescroll_js_active() {
 			touchbehavior: 		<?php echo (!empty($touchbehavior)) ? $touchbehavior : 'false'; ?>,
 		});
 	}
-	
+
 );})(jQuery);
 </script>
 <?php
@@ -106,5 +107,4 @@ add_action( 'wp_footer', 'as_ncescroll_js_active' );
  // nice scroll admin option
  define( 'as_nice_scroll_path', plugin_dir_path( __FILE__ ) );
  require_once( as_nice_scroll_path . '/settings/as_scroll_option.php' );
- 
- 
+

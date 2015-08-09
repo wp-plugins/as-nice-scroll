@@ -1,24 +1,24 @@
 <?php
 //admin fields
 function as_nicescroll_admin_option(){
-	add_settings_section('as_nicescroll_section','Nice scroll options', 'as_nicescroll_display_function','as_options');	
-	add_settings_field('as_nice_cursorcolor', 'Cursorcolor' , 'as_nicescroll_display_option','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_cursorwidth', 'Cursorwidth' , 'as_nice_cursorwidth_display_option','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_border_width', 'cursorborder width' , 'as_nice_cursorborder_width','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_border_style', 'cursorborder style' , 'as_nice_cursorborder_style','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_border_color', 'cursorborder color' , 'as_nice_cursorborder_color','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_scroll_speed', 'Scrollspeed' , 'as_nice_scrollspeed','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_autohide_mode', 'Autohidemode' , 'as_nice_autohide_mode','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_background', 'Background' , 'as_nice_background','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_hidecursordelay', 'Hidecursordelay' , 'as_nice_hidecursordelay','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_cursorfixedheight', 'Cursorfixedheight' , 'as_nice_cursorfixedheight','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_cursorminheight', 'Cursorminheight' , 'as_nice_cursorminheight','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_enablekeyboard', 'Enablekeyboard' , 'as_nice_enablekeyboard','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_horizrailenabled', 'Horizrailenabled' , 'as_nice_horizrailenabled','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_bouncescroll', 'Bouncescroll' , 'as_nice_bouncescroll','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_smoothscroll', 'Smoothscroll' , 'as_nice_smoothscroll','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_iframeautoresize', 'Iframeautoresize' , 'as_nice_iframeautoresize','as_options', 'as_nicescroll_section');	
-	add_settings_field('as_nice_touchbehavior', 'Touchbehavior' , 'as_nice_touchbehavior','as_options', 'as_nicescroll_section');	
+	add_settings_section('as_nicescroll_section','Nice scroll options', 'as_nicescroll_display_function','as_options');
+	add_settings_field('as_nice_cursorcolor', 'Cursorcolor' , 'as_nicescroll_display_option','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_cursorwidth', 'Cursorwidth' , 'as_nice_cursorwidth_display_option','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_border_width', 'cursorborder width' , 'as_nice_cursorborder_width','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_border_style', 'cursorborder style' , 'as_nice_cursorborder_style','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_border_color', 'cursorborder color' , 'as_nice_cursorborder_color','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_scroll_speed', 'Scrollspeed' , 'as_nice_scrollspeed','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_autohide_mode', 'Autohidemode' , 'as_nice_autohide_mode','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_background', 'Background' , 'as_nice_background','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_hidecursordelay', 'Hidecursordelay' , 'as_nice_hidecursordelay','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_cursorfixedheight', 'Cursorfixedheight' , 'as_nice_cursorfixedheight','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_cursorminheight', 'Cursorminheight' , 'as_nice_cursorminheight','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_enablekeyboard', 'Enablekeyboard' , 'as_nice_enablekeyboard','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_horizrailenabled', 'Horizrailenabled' , 'as_nice_horizrailenabled','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_bouncescroll', 'Bouncescroll' , 'as_nice_bouncescroll','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_smoothscroll', 'Smoothscroll' , 'as_nice_smoothscroll','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_iframeautoresize', 'Iframeautoresize' , 'as_nice_iframeautoresize','as_options', 'as_nicescroll_section');
+	add_settings_field('as_nice_touchbehavior', 'Touchbehavior' , 'as_nice_touchbehavior','as_options', 'as_nicescroll_section');
 	register_setting('as_nicescroll_section','as_op_save');
 }
 add_action('admin_init', 'as_nicescroll_admin_option');
@@ -39,10 +39,10 @@ function as_nicescroll_display_function(){
 
 
 function as_nicescroll_display_option(){
-	
+
 	$as_color = (array)get_option('as_op_save');
 	$color = (isset($as_color['as_nice_cursorcolor'])) ? $as_color['as_nice_cursorcolor'] : '';
-	
+
 	echo '<input name="as_op_save[as_nice_cursorcolor]" type="text" value="'.$color.'" class="regular-text as_color_option">';
 }
 
@@ -59,13 +59,13 @@ function as_nice_cursorborder_width(){
 	$as_border_width = (array)get_option('as_op_save');
 	$border_width = (isset($as_border_width['as_nice_border_width'])) ? $as_border_width['as_nice_border_width'] : '';
 	echo '<input name="as_op_save[as_nice_border_width]" type="number" value="'.$border_width.'" class="regular-text">';
-	echo '<p>Number == px</p>';	
+	echo '<p>Number == px</p>';
 }
 function as_nice_cursorborder_style(){
 	$as_border_style = (array)get_option('as_op_save');
 	$border_style = (isset($as_border_style['as_nice_border_style'])) ? $as_border_style['as_nice_border_style'] : '';
 	?>
-	
+
 	<select name="as_op_save[as_nice_border_style]" class="regular-text" >
 		<option value="" <?php echo (empty($border_style)) ? 'selected' : '' ;?> >Select a value</option>
 		<option value="solid" <?php echo ($border_style == 'solid') ? 'selected' : '' ;?> >Solid</option>
@@ -82,20 +82,20 @@ function as_nice_cursorborder_style(){
 		<option value="inherit" <?php echo ($border_style == 'inherit') ? 'selected' : '' ;?> >Inherit</option>
 		<option value="none" <?php echo ($border_style == 'none') ? 'selected' : '' ;?> >None</option>
 	</select>
-	
+
 	<?php
 }
 function as_nice_cursorborder_color(){
 	$as_border_color = (array)get_option('as_op_save');
 	$border_color = (isset($as_border_color['as_nice_border_color'])) ? $as_border_color['as_nice_border_color'] : '';
-	
+
 	echo '<input name="as_op_save[as_nice_border_color]" type="text" value="'.$border_color.'" class="regular-text as_color_option">';
 }
 
 function as_nice_scrollspeed(){
 	$as_scroll_speed = (array)get_option('as_op_save');
 	$scroll_speed = (isset($as_scroll_speed['as_nice_scroll_speed'])) ? $as_scroll_speed['as_nice_scroll_speed'] : '';
-	
+
 	echo '<input name="as_op_save[as_nice_scroll_speed]" type="number" value="'.$scroll_speed.'" class="regular-text">';
 	echo '<p>Default 60</p>';
 }
@@ -103,7 +103,7 @@ function as_nice_scrollspeed(){
 function as_nice_autohide_mode(){
 	$as_autohide = (array)get_option('as_op_save');
 	$autohide = (isset($as_autohide['as_nice_autohide_mode'])) ? $as_autohide['as_nice_autohide_mode'] : '';
-	
+
 ?>
 
 <select name="as_op_save[as_nice_autohide_mode]" class="regular-text" >
@@ -119,21 +119,21 @@ function as_nice_autohide_mode(){
 function as_nice_background(){
 	$as_background = (array)get_option('as_op_save');
 	$background = (isset($as_background['as_nice_background'])) ? $as_background['as_nice_background'] : '';
-	
+
 	echo '<input name="as_op_save[as_nice_background]" type="text" value="'.$background.'" class="regular-text as_color_option">';
 }
 
 function as_nice_hidecursordelay(){
 	$as_hidecursordelay = (array)get_option('as_op_save');
 	$hidecursordelay = (isset($as_hidecursordelay['as_nice_hidecursordelay'])) ? $as_hidecursordelay['as_nice_hidecursordelay'] : '';
-	
+
 	echo '<input name="as_op_save[as_nice_hidecursordelay]" type="number" value="'.$hidecursordelay.'" class="regular-text">';
 	echo '<p>Default 400</p>';
 }
 function as_nice_cursorfixedheight(){
 	$as_cursorfixedheight = (array)get_option('as_op_save');
 	$cursorfixedheight = (isset($as_cursorfixedheight['as_nice_cursorfixedheight'])) ? $as_cursorfixedheight['as_nice_cursorfixedheight'] : '';
-	
+
 ?>
 
 <select name="as_op_save[as_nice_cursorfixedheight]" class="regular-text">
@@ -148,7 +148,7 @@ function as_nice_cursorfixedheight(){
 function as_nice_cursorminheight(){
 	$as_cursorminheight = (array)get_option('as_op_save');
 	$cursorminheight = (isset($as_cursorminheight['as_nice_cursorminheight'])) ? $as_cursorminheight['as_nice_cursorminheight'] : '';
-	
+
 	echo '<input name="as_op_save[as_nice_cursorminheight]" type="number" value="'.$cursorminheight.'" class="regular-text">';
 	echo '<p>Default 20</p>';
 }
@@ -163,7 +163,7 @@ function as_nice_enablekeyboard(){
 	<option value="false" <?php echo ($enablekeyboard == 'false') ? 'selected' : '' ;?> >False</option>
 </select>
 <p>Default True</p>
-	<?php	
+	<?php
 }
 function as_nice_horizrailenabled(){
 	$as_horizrailenabled = (array)get_option('as_op_save');
@@ -175,7 +175,7 @@ function as_nice_horizrailenabled(){
 	<option value="false" <?php echo ($horizrailenabled == 'false') ? 'selected' : '' ;?> >False</option>
 </select>
 <p>Default True</p>
-	<?php	
+	<?php
 }
 function as_nice_bouncescroll(){
 	$as_bouncescroll = (array)get_option('as_op_save');
@@ -229,7 +229,20 @@ function as_nice_touchbehavior(){
 
 function as_nicescroll_display_menu(){
 ?>
-<div class="wrap">
+<div class="wrap" style="position:relative;overflow: hidden;">
+     <div class="my_status_main">
+        <div class="my_status_main_inner">
+            <span class="as_click_hide"><img src="<?php echo plugins_url( 'img/right.png', __FILE__ ); ?>" alt=""></span>
+            <span class="as_click_show"><img src="<?php  echo plugins_url( 'img/right.png', __FILE__ ); ?>" alt=""></span>
+            <ul class="as_url">
+                <li><span>See on my other plugins</span> <a target="_blank" href="https://wordpress.org/plugins/as-login/"><img  class="fiverr" src="<?php  echo plugins_url( 'img/wordpress.png', __FILE__ ); ?>" alt=""></a></li>
+                <li><span>See on my Fiverr profile</span> <a target="_blank" href="https://www.fiverr.com/anuislam"><img  class="fiverr" src="<?php  echo plugins_url( 'img/fiverr.png', __FILE__ ); ?>" alt=""></a></li>
+                <li><span>See on my PeoplePerhour profile</span> <a target="_blank" href="http://www.peopleperhour.com/freelancer/anu-islam/web-design-wordpress-wordpress-pl/910027"><img class="github" src="<?php  echo plugins_url( 'img/People.png', __FILE__ ); ?>" alt=""></a></li>
+
+                <li><span>See on my GitHub repository</span> <a target="_blank" href="https://github.com/anuislam"><img class="github" src="<?php  echo plugins_url( 'img/github.png', __FILE__ ); ?>" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
 	<h2>As nice scroll</h2>
 	<?php settings_errors(); ?>
 	<form action="options.php" method="POST">
